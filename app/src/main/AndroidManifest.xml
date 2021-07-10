@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.speedchecker.android.sdk.demo">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.speedchecker.android.sdk.speedtest">
 
     <application
         android:allowBackup="false"
@@ -10,10 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.speedchecker.android.sdk.demo.MainActivity"
+            android:name="com.yk.speedtest.activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

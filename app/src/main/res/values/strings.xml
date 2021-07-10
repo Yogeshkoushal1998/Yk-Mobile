@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Speedchecker - DemoApp</string>
+    <string name="app_name">YK Mobile</string>
+    <string name="test_intereeupted">Test Interrupted</string>
+    <string name="test_fatal_error">Test Fatal Error</string>
+    <string name="test_warning">Test Warning</string>
+    <string name="profile">Profile</string>
+    <string name="speed_test">Speed Test</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
 </resources>

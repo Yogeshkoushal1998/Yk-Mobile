@@ -1,10 +1,10 @@
-package com.speedchecker.android.sdk.demo;
+package com.yk.speedtest;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.speedchecker.android.sdk.SpeedcheckerSDK;
 
-public class ExampleFCMService extends FirebaseMessagingService {
+public class FCMService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {

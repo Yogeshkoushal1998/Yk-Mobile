@@ -5,10 +5,10 @@ android {
 
     defaultConfig {
         applicationId "com.speedchecker.android.sdk.demo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
-        versionCode 5
-        versionName "1.0.5"
+        versionCode 1
+        versionName "1.0.0"
     }
 
     buildTypes {
@@ -18,12 +18,28 @@ android {
         }
     }
 
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
-    //TODO: 2. Update the "app level" gradle file.
     implementation 'com.speedchecker:android-sdk:4.2.105-2-demo'
+    // neumorphism
+    implementation 'com.github.fornewid:neumorphism:0.3.0'
+    //Dimension lib
+    api 'com.intuit.sdp:sdp-android:1.0.6'
+    api 'com.intuit.ssp:ssp-android:1.0.6'
+    //okhhtp3
+    api "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    //Glide
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.11.0"
+
+    //Material design
+    implementation 'com.google.android.material:material:1.1.0'
 }
