@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<soup.neumorphism.NeumorphTextView android:id="@+id/tvTitle"
+<soup.neumorphism.NeumorphTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tvTitle"
+    style="@style/neuTextStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
-    android:text="--"
-    style="@style/neuTextStyle"
+    android:fontFamily="@font/bitter"
+    android:text="@string/dash"
     android:textSize="@dimen/_28ssp"
+    app:fontFamily="@font/trade_winds"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" />
+    app:layout_constraintTop_toTopOf="parent" />

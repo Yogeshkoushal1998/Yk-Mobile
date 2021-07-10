@@ -6,6 +6,9 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -13,6 +16,9 @@ import android.widget.Toast;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.bumptech.glide.Glide;
+
+import java.util.List;
+import java.util.Locale;
 
 public class AppUtill {
 
@@ -41,6 +47,23 @@ public class AppUtill {
 
   public static void showNeumorphToast(Context context, String msg) {
     Toast.makeText(context, msg + "", Toast.LENGTH_SHORT).show();
+  }
+
+
+  public static String getAddress(Context mContext,double latitude, double longitude) {
+    String strAdd = "";
+    Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+    try {
+      List<Address> addresses = geocoder.getFromLocation(latitude,
+              longitude, 1);
+      if (addresses != null) {
+        Address returnedAddress = addresses.get(0);
+        strAdd = "" + returnedAddress.getAddressLine(0);
+      }
+    } catch (Exception e) {
+      AppLogger.ex(e);
+    }
+    return strAdd;
   }
 
 }

@@ -4,14 +4,14 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.yk.speedtest.db.convertor.InfoConverter;
-import com.yk.speedtest.db.dao.SpeedTestHistoryDataDao;
-import com.yk.speedtest.models.SpeedTestHistory;
+import com.yk.speedtest.db.convertor.Converter;
+import com.yk.speedtest.db.dao.TestHistoryDataDao;
+import com.yk.speedtest.models.TestHistory;
 
-@Database(entities = { SpeedTestHistory.class }, version = DBConstants.DB_VERSION, exportSchema = false)
-@TypeConverters({ InfoConverter.class })
+@Database(entities = { TestHistory.class }, version = DBConstants.DB_VERSION, exportSchema = false)
+@TypeConverters({ Converter.class })
 public abstract class AppDatabase extends RoomDatabase {
 
-  public abstract SpeedTestHistoryDataDao speedTestHistoryDataDao();
+  public abstract TestHistoryDataDao speedTestHistoryDataDao();
 
 }

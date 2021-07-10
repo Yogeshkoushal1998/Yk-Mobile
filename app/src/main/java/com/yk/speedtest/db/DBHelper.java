@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.yk.speedtest.db.dao.SpeedTestHistoryDataDao;
+import com.yk.speedtest.db.dao.TestHistoryDataDao;
 
 public class DBHelper {
 
@@ -31,7 +31,7 @@ public class DBHelper {
     }
   }
 
-  public SpeedTestHistoryDataDao getSpeedTestHistoryDao() {
+  public TestHistoryDataDao getSpeedTestHistoryDao() {
     return appDatabase.speedTestHistoryDataDao();
   }
 

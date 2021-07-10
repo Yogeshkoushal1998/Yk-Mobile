@@ -7,6 +7,7 @@
     <color name="black">#000000</color>
     <color name="black_50">#80000000</color>
     <color name="white_50">#80ffffff</color>
+    <color name="white">#ffffff</color>
     <color name="white_20">#33ffffff</color>
     <color name="screen_color_white_theme">#EFEEEE</color>
     <color name="card_shadow_light_white_theme">#80ffffff</color>

@@ -7,7 +7,7 @@ import java.util.Objects;
 import static android.content.ContentValues.TAG;
 
 public class AppLogger {
-  private static final boolean DEBUG = false;
+  private static final boolean DEBUG = true;
   private static final String PREFIX = "<--Yk Mobile Log--> ";
 
   private AppLogger() {

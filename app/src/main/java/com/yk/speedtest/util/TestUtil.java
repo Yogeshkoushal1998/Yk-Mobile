@@ -31,8 +31,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.speedchecker.android.sdk.speedtest.R;
 import com.yk.speedtest.constact.AppConstants;
-import com.yk.speedtest.db.helper.SpeedTestHistoryDataDbHelper;
-import com.yk.speedtest.models.SpeedTestHistory;
+import com.yk.speedtest.db.helper.TestHistoryDataDbHelper;
+import com.yk.speedtest.models.TestHistory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,28 +40,28 @@ import java.util.List;
 public class TestUtil {
   private static GoogleApiClient googleApiClient;
 
-  public static void insertTestDataInDb(Context mContext, SpeedTestHistory history) {
-    SpeedTestHistoryDataDbHelper.getInstance(mContext).insert(history);
+  public static void insertTestDataInDb(Context mContext, TestHistory history) {
+    TestHistoryDataDbHelper.getInstance(mContext).insert(history);
     updateListDataInDb(mContext);
   }
 
   public static void updateListDataInDb(Context mContext) {
-    SpeedTestHistoryDataDbHelper helper = SpeedTestHistoryDataDbHelper.getInstance(mContext);
-    List<SpeedTestHistory> historyListOrdered = helper.getHistoryListOrdered();
+    TestHistoryDataDbHelper helper = TestHistoryDataDbHelper.getInstance(mContext);
+    List<TestHistory> historyListOrdered = helper.getHistoryListOrdered();
     if (historyListOrdered != null && !historyListOrdered.isEmpty()) {
-      ArrayList<SpeedTestHistory> updatedList = new ArrayList<>();
+      ArrayList<TestHistory> updatedList = new ArrayList<>();
       if (historyListOrdered.size() > AppConstants.FIVE) {
         for (int count = AppConstants._0; count < AppConstants.FIVE; count++) {
           updatedList.add(historyListOrdered.get(count));
         }
         helper.deleteAll();
-        SpeedTestHistoryDataDbHelper.getInstance(mContext).insertList(updatedList);
+        TestHistoryDataDbHelper.getInstance(mContext).insertList(updatedList);
       }
     }
   }
 
-  public static List<SpeedTestHistory> getSortedHistoryList(Context mContext) {
-    return SpeedTestHistoryDataDbHelper.getInstance(mContext).getHistoryListOrdered();
+  public static List<TestHistory> getSortedHistoryList(Context mContext) {
+    return TestHistoryDataDbHelper.getInstance(mContext).getHistoryListOrdered();
   }
 
   // Check location is avaliable or not
@@ -241,8 +241,8 @@ public class TestUtil {
   }
 
   public static void showDialogOK(String message, DialogInterface.OnClickListener okListener, Context mContext) {
-    new AlertDialog.Builder(mContext).setMessage(message).setPositiveButton(mContext.getString(R.string.OK), okListener)
-            .setNegativeButton(mContext.getString(R.string.CANCEL), okListener).create().show();
+    new AlertDialog.Builder(mContext).setMessage(message).setPositiveButton(mContext.getString(R.string.ok), okListener)
+            .setNegativeButton(mContext.getString(R.string.cancel), okListener).create().show();
   }
 
   public static void sendPermissionScreen(Context mContext) {

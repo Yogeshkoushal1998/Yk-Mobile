@@ -36,8 +36,8 @@
         </style>
 
         <style name="CustomShapeAppearance4">
-            <item name="neumorph_cornerFamily">rounded</item>
-            <item name="neumorph_cornerSize">@dimen/_11sdp</item>
+            <item name="neumorph_cornerFamily">oval</item>
+            <item name="neumorph_cornerSize">@dimen/_50sdp</item>
         </style>
 
         <style name="CustomShapeAppearance5">
