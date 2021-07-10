@@ -29,3 +29,17 @@ e
 5app/src/main/java/com/yk/speedtest/util/AppUtill.java,8/2/827f0a28ba391c76b904137dee4f0cc8ce7ccc02
 r
 Bapp/src/main/java/com/yk/speedtest/fragments/SettingsFragment.java,6/b/6bcbb348e18e5471ca919148d17a72027c5b33ac
+f
+6app/src/main/java/com/yk/speedtest/db/DBConstants.java,b/6/b6336020190d6a3ec1e0079defce023f5c23a343
+c
+3app/src/main/java/com/yk/speedtest/db/DBHelper.java,c/a/caa02b0e8f018e68745f68c8673139beb84f154e
+o
+?app/src/main/java/com/yk/speedtest/models/SpeedTestHistory.java,1/1/115d1c37319c3a4414f3e6a0412f09c3fddf1591
+v
+Fapp/src/main/java/com/yk/speedtest/db/dao/SpeedTestHistoryDataDao.java,5/4/54deaef52b8c530783f0b8eb25adc4a3a49e9317
+~
+Napp/src/main/java/com/yk/speedtest/db/helper/SpeedTestHistoryDataDbHelper.java,6/1/61010b7b6d630fd36625f123059fa8b19a9dbcfd
+f
+6app/src/main/java/com/yk/speedtest/db/AppDatabase.java,f/2/f230aa56edebcdd5ad05dfc0844f6b0b944e32c9
+r
+Bapp/src/main/java/com/yk/speedtest/db/convertor/InfoConverter.java,0/1/01202a9250e2ab9501d50db46b188eea29bdbe39

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
@@ -38,5 +39,8 @@ public class AppUtill {
     t.start();
   }
 
+  public static void showNeumorphToast(Context context, String msg) {
+    Toast.makeText(context, msg + "", Toast.LENGTH_SHORT).show();
+  }
 
 }
