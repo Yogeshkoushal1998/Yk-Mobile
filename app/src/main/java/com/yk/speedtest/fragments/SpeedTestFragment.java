@@ -2,6 +2,7 @@ package com.yk.speedtest.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +67,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
     tvStart = rootview.findViewById(R.id.tvStart);
     tvTitle.setText(R.string.speed_test);
     AppUtill.changeTextColorAnimation(tvTitle);
+//    mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
     rootview.findViewById(R.id.startBtn).setOnClickListener(v -> {
       if (!isTestRunning) {
         tvStart.setText(R.string.stop);
@@ -76,8 +78,6 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         isTestRunning = false;
         SpeedcheckerSDK.SpeedTest.interruptTest();
       }
-
-
     });
   }
 

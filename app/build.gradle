@@ -54,4 +54,7 @@ dependencies {
         transitive = true
     }
 
+
+    compile 'com.github.bmarrdev:android-DecoView-charting:v1.2'
+
 }

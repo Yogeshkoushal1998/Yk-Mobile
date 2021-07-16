@@ -81,7 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         break;
       case R.id.ivProfile:
         setAnimation(false, false, true, false);
-        loadFragment(ProfileFragment.getInstance());
+//        loadFragment(ProfileFragment.getInstance());
+        Intent intent = new Intent(this, SpeedBoosterActivity.class);
+        startActivity(intent);
         break;
     }
   }

@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -46,6 +47,15 @@ public class AppUtill {
   }
 
   public static void showNeumorphToast(Context context, String msg) {
+//    LayoutInflater inflater = getLayoutInflater();
+//         View layout = inflater.inflate(R.layout.my_toast, null);
+//          TextView text = (TextView) layout.findViewById(R.id.textView1);
+//          text.setText(msg);
+//          Toast toast = new Toast(SpeedBoosterActivity.this);
+//          toast.setGravity(Gravity.CENTER_VERTICAL, 0, 70);
+//          toast.setDuration(Toast.LENGTH_LONG);
+//          toast.setView(layout);
+//          toast.show();
     Toast.makeText(context, msg + "", Toast.LENGTH_SHORT).show();
   }
 
