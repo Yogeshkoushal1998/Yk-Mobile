@@ -50,8 +50,8 @@ public class TestUtil {
     List<TestHistory> historyListOrdered = helper.getHistoryListOrdered();
     if (historyListOrdered != null && !historyListOrdered.isEmpty()) {
       ArrayList<TestHistory> updatedList = new ArrayList<>();
-      if (historyListOrdered.size() > AppConstants.FIVE) {
-        for (int count = AppConstants._0; count < AppConstants.FIVE; count++) {
+      if (historyListOrdered.size() > AppConstants.TWENTY) {
+        for (int count = AppConstants._0; count < AppConstants.TWENTY; count++) {
           updatedList.add(historyListOrdered.get(count));
         }
         helper.deleteAll();
@@ -69,7 +69,7 @@ public class TestUtil {
     final LocationManager manager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
     if (!hasGPSDevice(mContext)) {
       String gpsNotSupported = mContext.getString(R.string.gps_not_supported);
-      AppUtill.showNeumorphToast(mContext, gpsNotSupported);
+      AppUtil.showNeumorphToast(mContext, gpsNotSupported);
       return false;
     }
     if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(mContext)) {
@@ -152,7 +152,7 @@ public class TestUtil {
             case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
               // Location settings are not satisfied. However, we have no way to fix the
               // settings so we won't show the dialog.
-              AppUtill.showNeumorphToast(mContext, mContext.getString(R.string.location_sett_insufficient));
+              AppUtil.showNeumorphToast(mContext, mContext.getString(R.string.location_sett_insufficient));
               break;
             default:
               break;

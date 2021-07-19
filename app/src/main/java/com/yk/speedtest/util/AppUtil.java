@@ -10,6 +10,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,10 +20,12 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Locale;
 
-public class AppUtill {
+public class AppUtil {
 
   public static void setAnimationImage(Context mContext, int id, ImageView imageView, boolean isAnimation) {
     if (isAnimation) {
@@ -74,6 +78,34 @@ public class AppUtill {
       AppLogger.ex(e);
     }
     return strAdd;
+  }
+
+  public static View getInflatedLayout(Context ctx, int layoutId, ViewGroup root) {
+    return LayoutInflater.from(ctx).inflate(layoutId, root);
+  }
+
+  public static View getInflatedLayout(Context ctx, int layoutId, ViewGroup root, boolean attachToRoot) {
+    return LayoutInflater.from(ctx).inflate(layoutId, root, attachToRoot);
+  }
+
+  public static float getCPUtemperature()
+  {
+    Process process;
+    try {
+      process = Runtime.getRuntime().exec("cat sys/class/thermal/thermal_zone0/temp");
+      process.waitFor();
+      BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+      String line = reader.readLine();
+      if(line!=null) {
+        float temp = Float.parseFloat(line);
+        return temp / 1000.0f;
+      }else{
+        return 51.0f;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+      return 0.0f;
+    }
   }
 
 }

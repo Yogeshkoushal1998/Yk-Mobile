@@ -35,4 +35,17 @@
     <string name="address">Address</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="subtitle">SubTitle</string>
+    <string name="title">Title</string>
+    <string name="stop_test">Stop Test</string>
+    <string name="do_you_want_to_stop_test">Do you want to Stop Speed Test?</string>
+    <string name="history">History</string>
+    <string name="title_activity_speed_test_history">SpeedTestHistory</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

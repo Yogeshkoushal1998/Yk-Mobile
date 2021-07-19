@@ -4,6 +4,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">?attr/isLightTheme</item>
+        <item name="android:navigationBarColor">@color/screen_color_white_theme</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>
         <item name="android:statusBarColor">@color/screen_color_white_theme</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
@@ -82,5 +84,12 @@
         <item name="neumorph_backgroundColor">@color/screen_color_white_theme</item>
     </style>
 
+
+    <style name="dialogThm">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/dia_bg_color_white_theme</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/screen_color_white_theme</item>
+    </style>
 
 </resources>

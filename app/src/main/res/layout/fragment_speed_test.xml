@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_color_white_theme">
@@ -11,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintBottom_toTopOf="@+id/rlbtn"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle">
 
         <soup.neumorphism.NeumorphCardView
@@ -66,43 +67,91 @@
 
     </RelativeLayout>
 
-
-    <soup.neumorphism.NeumorphCardView
-        android:id="@+id/startBtn"
-        style="@style/neuCardStyle"
+    <LinearLayout
+        android:id="@+id/rlbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
-        app:neumorph_shapeType="flat">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <soup.neumorphism.NeumorphTextView
-            android:id="@+id/tvStart"
-            style="@style/neuTextStyle"
-            android:layout_width="match_parent"
+        <soup.neumorphism.NeumorphCardView
+            style="@style/neuCardStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:text="@string/start"
-            android:textColor="@color/black_50"
-            android:textSize="@dimen/_16ssp"
-            android:textStyle="bold" />
-    </soup.neumorphism.NeumorphCardView>
+            android:gravity="center"
+            android:visibility="invisible"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+            app:neumorph_shapeType="flat">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp" />
+
+        </soup.neumorphism.NeumorphCardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rlbtnAnimate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/llBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/llBottom">
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/btnStart"
+            style="@style/neuCardStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+            app:neumorph_shapeType="flat">
+
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/tvStart"
+                style="@style/neuTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/start"
+                android:textColor="@color/black_50"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphImageView
+            android:id="@+id/btnHistory"
+            style="@style/neuCardStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp"
+            android:src="@drawable/ic_baseline_history_24" />
+
+    </LinearLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llBottom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startBtn">
+        app:layout_constraintTop_toBottomOf="@+id/rlbtn">
 
         <soup.neumorphism.NeumorphCardView
             style="@style/neuCardStyle"
@@ -159,8 +208,8 @@
                         android:layout_below="@+id/textView_stage"
                         android:fontFamily="@font/bitter"
                         android:gravity="center"
-                        android:text="@string/dash"
                         android:padding="@dimen/_5sdp"
+                        android:text="@string/dash"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_12ssp"
                         app:layout_constraintTop_toBottomOf="@+id/textView_stage" />

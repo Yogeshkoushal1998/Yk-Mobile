@@ -24,7 +24,7 @@ import com.hookedonplay.decoviewlib.charts.SeriesItem;
 import com.hookedonplay.decoviewlib.events.DecoEvent;
 import com.speedchecker.android.sdk.speedtest.R;
 import com.yk.speedtest.util.AppLogger;
-import com.yk.speedtest.util.AppUtill;
+import com.yk.speedtest.util.AppUtil;
 
 import java.io.RandomAccessFile;
 import java.text.DecimalFormat;
@@ -100,7 +100,7 @@ public class SpeedBoosterActivity extends AppCompatActivity {
           AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
           alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (100 * 1000), pendingIntent);
         } else {
-          AppUtill.showNeumorphToast(this,"Phone Is Aleady Optimized");
+          AppUtil.showNeumorphToast(this,"Phone Is Aleady Optimized");
         }
       });
     } catch (Exception e) {

@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.speedchecker.android.sdk.speedtest.R;
 import com.yk.speedtest.activity.MainActivity;
-import com.yk.speedtest.util.AppUtill;
+import com.yk.speedtest.util.AppUtil;
 
 import soup.neumorphism.NeumorphTextView;
 
@@ -47,7 +47,7 @@ public class SettingsFragment extends Fragment {
   private void initView(View rootview) {
     NeumorphTextView tvTitle = rootview.findViewById(R.id.tvTitle);
     tvTitle.setText(R.string.settings);
-    AppUtill.changeTextColorAnimation(tvTitle);
+    AppUtil.changeTextColorAnimation(tvTitle);
 
     SwitchCompat switch_theme = rootview.findViewById(R.id.switch_theme);
     switch_theme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

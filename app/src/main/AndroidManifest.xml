@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.speedchecker.android.sdk.speedtest">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +24,10 @@
         </activity>
         <activity
             android:name="com.yk.speedtest.activity.SpeedBoosterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.yk.speedtest.activity.SpeedTestHistoryActivity"
             android:screenOrientation="portrait">
         </activity>
         <meta-data
