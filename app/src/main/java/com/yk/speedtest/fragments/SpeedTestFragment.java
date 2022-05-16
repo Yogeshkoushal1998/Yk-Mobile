@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,7 +22,6 @@ import com.speedchecker.android.sdk.SpeedcheckerSDK;
 import com.speedchecker.android.sdk.speedtest.R;
 import com.yk.speedtest.activity.SpeedTestHistoryActivity;
 import com.yk.speedtest.models.TestHistory;
-import com.yk.speedtest.util.AnimationUtil;
 import com.yk.speedtest.util.AppLogger;
 import com.yk.speedtest.util.AppUtil;
 import com.yk.speedtest.util.SpeedMeterUtil;
@@ -153,6 +151,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
                 + getString(R.string.address) + ": " + AppUtil.getAddress(mActivity, speedTestResult.getLatitude(), speedTestResult.getLongitude()) + "\n";
         mTextViewStage.setText(R.string.test_finised);
         mTextViewResult.setText(finalStr);
+        AppLogger.d("TAG", new Gson().toJson(speedTestResult));
         setDataInDb(speedTestResult);
         resetTestView();
     }

@@ -1,8 +1,10 @@
 package com.yk.speedtest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +16,7 @@ import com.yk.speedtest.fragments.ProfileFragment;
 import com.yk.speedtest.fragments.SettingsFragment;
 import com.yk.speedtest.fragments.SpeedTestFragment;
 import com.yk.speedtest.util.AppUtil;
+import com.yk.speedtest.util.ThemeUtils;
 
 import java.util.List;
 
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeUtils.setTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
         getSavedInstances(savedInstanceState);
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void loadHomeFragment() {
         setAnimation(true, false, false, false);
-        loadFragment(HomeFragment.getInstance());
+        loadFragment(SpeedTestFragment.getInstance());
     }
 
   private void loadSpeedTestFragment() {
@@ -151,5 +155,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             isRecreate = false;
         }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

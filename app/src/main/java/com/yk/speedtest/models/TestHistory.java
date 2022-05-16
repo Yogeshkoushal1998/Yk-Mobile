@@ -34,6 +34,7 @@ public class TestHistory {
   private String crossTrafficStatsErrors;
   private int downloadThreadsUsed;
   private int uploadThreadsUsed;
+    public Boolean expand = false;
 
 
   @NonNull

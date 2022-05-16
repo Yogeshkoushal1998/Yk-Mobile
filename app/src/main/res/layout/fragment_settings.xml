@@ -1,24 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_color_white_theme">
+    android:background="@color/screen_color_white_theme"
+    android:orientation="vertical">
 
-    <include layout="@layout/title_text"/>
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_theme"
+    <include
+        android:id="@+id/tvTitle"
+        layout="@layout/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch theme"
-        app:switchPadding="10dp"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_set_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/setTheme"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/ncTheme"
+                style="@style/neuCardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_set_theme"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance5"
+                app:neumorph_shapeType="basin">
+
+                <LinearLayout
+                    android:id="@+id/llTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_set_theme">
+
+                    <RelativeLayout
+                        android:id="@+id/rlLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/nIvLight"
+                                style="@style/neuCardStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:padding="@dimen/_16sdp"
+                                app:neumorph_shadowElevation="4dp"
+                                app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                                app:neumorph_shapeType="flat"
+                                app:srcCompat="@drawable/circle_green" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/light"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13ssp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/nIvDark"
+                                style="@style/neuCardStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:padding="@dimen/_16sdp"
+                                android:tint="@color/black"
+                                app:neumorph_shadowElevation="4dp"
+                                app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                                app:neumorph_shapeType="basin" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/dark"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13ssp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </soup.neumorphism.NeumorphCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/feedback"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/ncTheme" />
+
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/ncFeedback"
+                style="@style/neuCardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_feedback"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance5"
+                app:neumorph_shapeType="basin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <soup.neumorphism.NeumorphCardView
+                        style="@style/neuCardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        app:neumorph_shadowElevation="@dimen/_2sdp"
+                        app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                        app:neumorph_shapeType="pressed">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/editTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@color/transparent"
+                                android:hint="@string/title"
+                                android:imeOptions="actionSearch"
+                                android:importantForAutofill="no"
+                                android:singleLine="true"
+                                android:textColor="@color/search_text_color"
+                                android:textColorHint="@color/search_hint_text_color"
+                                android:textSize="@dimen/_12ssp"
+                                android:theme="@style/SearchEditTextTheme" />
+
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        style="@style/neuCardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_120sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        app:neumorph_shapeType="pressed">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/editSubject"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:background="@android:color/transparent"
+                                android:gravity="start"
+                                android:hint="@string/add_your_comment"
+                                android:importantForAutofill="no"
+                                android:inputType="textMultiLine"
+                                android:maxLength="250"
+                                android:paddingStart="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_15sdp"
+                                android:paddingEnd="@dimen/_15sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:scrollbarThumbVertical="@android:color/transparent"
+                                android:scrollbars="vertical"
+                                android:textColor="@color/search_text_color"
+                                android:textColorHint="@color/search_hint_text_color"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <TextView
+                                android:id="@+id/tvCounter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end|bottom"
+                                android:paddingStart="@dimen/_1sdp"
+                                android:paddingEnd="@dimen/_15sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:text="@string/zero_slash_250"
+                                android:textColor="@color/black_50"
+                                android:textSize="@dimen/_10ssp" />
+
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:numStars="5"
+                        android:progressTint="#FFCC01"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <soup.neumorphism.NeumorphButton
+                            android:id="@+id/tvCancel"
+                            style="@style/neuCardStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/cancel"
+                            android:textColor="@color/black_50"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold"
+                            tools:ignore="NestedWeights" />
+
+                        <soup.neumorphism.NeumorphButton
+                            android:id="@+id/tvSubmit"
+                            style="@style/neuCardStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/submit"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/about"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/ncFeedback" />
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/neuCardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_about"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance5"
+                app:neumorph_shapeType="basin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:singleLine="true"
+                        android:text="@string/application_version"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVersionValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:singleLine="true"
+                        android:text="@string/_1_0_0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVersion" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeveloper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:singleLine="true"
+                        android:text="@string/developer"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVersionValue" />
+
+                    <LinearLayout
+                        android:id="@+id/llAbout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:baselineAligned="false"
+                        android:gravity="start|center"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDeveloper">
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:id="@+id/nivInstagram"
+                            style="@style/neuCardStyle"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_instagram"
+                            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                            app:neumorph_shapeType="flat" />
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:id="@+id/nivFacebook"
+                            style="@style/neuCardStyle"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_facebook"
+                            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                            app:neumorph_shapeType="flat" />
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:id="@+id/nivLinkedIn"
+                            style="@style/neuCardStyle"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_linked_in"
+                            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                            app:neumorph_shapeType="flat" />
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:id="@+id/nivTwiter"
+                            style="@style/neuCardStyle"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_twiter"
+                            app:neumorph_shapeAppearance="@style/CustomShapeAppearance1"
+                            app:neumorph_shapeType="flat" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
+
+

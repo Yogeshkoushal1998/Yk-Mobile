@@ -38,7 +38,7 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="subtitle">SubTitle</string>
-    <string name="title">Title</string>
+    <string name="title">Title*</string>
     <string name="stop_test">Stop Test</string>
     <string name="do_you_want_to_stop_test">Do you want to Stop Speed Test?</string>
     <string name="history">History</string>
@@ -48,4 +48,54 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <string name="setTheme">Set theme</string>
+    <string name="test_history">Test History</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="just_now"> Just now</string>
+    <string name="minute_ago"> minute ago</string>
+    <string name="minutes_ago"> minutes ago</string>
+    <string name="hours_ago"> hours ago</string>
+    <string name="about_hr_ago">about an hour ago</string>
+
+    <string name="max">Max</string>
+    <string name="download">Download</string>
+    <string name="ping_caps">PING</string>
+    <string name="jitter_caps">JITTER</string>
+    <string name="packet_loss_caps">Accuracy</string>
+    <string name="location">Test location</string>
+    <string name="min_mum">Min</string>
+    <string name="rakuten">Rakuten</string>
+    <string name="device">Device</string>
+    <string name="server">Server</string>
+    <string name="lat">Lat</string>
+    <string name="longitute">Long</string>
+    <string name="mbps">Mbps</string>
+    <string name="zero">0</string>
+    <string name="test_time">Test started on</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">About</string>
+    <string name="application_version">Application Version</string>
+    <string name="_1_0_0">1.0.0</string>
+    <string name="developer">Developer</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="add_your_comment">Add your comment</string>
+    <string name="zero_slash_250">0/250</string>
+    <string name="submit">Submit</string>
 </resources>

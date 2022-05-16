@@ -44,5 +44,9 @@
     <color name="txt_grey">#4e5457</color>
     <color name="txt_blue">#136af6</color>
     <color name="red">#f63030</color>
+    <color name="search_text_color">#4F4F4F</color>
+    <color name="search_hint_text_color">#BDBDBD</color>
+    <color name="transparent">#0000ffff</color>
+    <color name="common_btn_fill_color">#F3F4F8</color>
 
 </resources>

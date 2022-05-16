@@ -1,21 +1,0 @@
-
-Q	java:S125B"<This block of commented-out lines of code should be removed.(—¥øŠ
-R	java:S125Ã"<This block of commented-out lines of code should be removed.(±©Èâ
-a
-java:S1192h"FDefine a constant instead of duplicating this literal " Mb/s" 6 times.(ß‘¡«şÿÿÿÿ
-b
-java:S1192Œ"FDefine a constant instead of duplicating this literal "% -> " 4 times.(¤ËÜŠùÿÿÿÿ
-K
-java:S1068"0Remove this unused "mTextViewLog" private field.(äªãüúÿÿÿÿ
-G
-java:S1481@",Remove this unused "tvStart" local variable.(©áèüÿÿÿÿ
-v
-java:S1450"[Remove the "mTextViewLog" field and declare it as a local variable in the relevant methods.(äªãüúÿÿÿÿ
-g
-java:S1128	"ERemove this unused import 'androidx.appcompat.app.AppCompatDelegate'.(Úïà±ıÿÿÿÿ8à˜Óç¨/
-J
-java:S1172Á".Remove this unused method parameter "message".(ÀÆÉùÿÿÿÿ
-B
-java:S1068 "'Remove this unused "sdf" private field.(ñ¥Åóüÿÿÿÿ
-s
-java:S1192Œ"WDefine a constant instead of duplicating this literal " Mb/s\nTransferredMb: " 4 times.(¤ËÜŠùÿÿÿÿ

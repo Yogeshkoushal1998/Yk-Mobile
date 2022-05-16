@@ -40,6 +40,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <soup.neumorphism.NeumorphImageView
@@ -79,6 +80,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <soup.neumorphism.NeumorphImageView
