@@ -11,8 +11,6 @@ c
 3app/src/main/java/com/yk/speedtest/db/DBHelper.java,c/a/caa02b0e8f018e68745f68c8673139beb84f154e
 f
 6app/src/main/java/com/yk/speedtest/db/AppDatabase.java,f/2/f230aa56edebcdd5ad05dfc0844f6b0b944e32c9
-`
-0app/src/main/java/com/yk/speedtest/YKMobile.java,d/c/dcbd352ae8611aa9c9ed0042022d543530efa26d
 n
 >app/src/main/java/com/yk/speedtest/db/convertor/Converter.java,c/4/c46c0442fff456808b7f24034be8a037f428c378
 q
@@ -27,8 +25,6 @@ y
 Iapp/src/main/java/com/yk/speedtest/db/helper/TestHistoryDataDbHelper.java,d\9\d900ffad0113b86fcc345586d9a32c5a688d1c7c
 e
 5app/src/main/java/com/yk/speedtest/util/TestUtil.java,b\6\b639ea20a10ee0bf5f9285a784a50eaee2d2e243
-f
-6app/src/main/java/com/yk/speedtest/util/AppLogger.java,b\d\bd9621eb7bd2a192bc06808834f85316cdeba1a6
 y
 Iapp/src/main/java/com/yk/speedtest/activity/SpeedTestHistoryActivity.java,4\1\41ad67b176f878a2b4bd6ddebd91fcfd306bd82b
 m

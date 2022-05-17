@@ -360,12 +360,13 @@
                                 android:visibility="visible">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
                                     android:layout_gravity="center"
                                     android:minWidth="@dimen/_19sdp"
                                     android:minHeight="@dimen/_19sdp"
-                                    app:srcCompat="@drawable/ic_ping"
+                                    android:padding="@dimen/_2sdp"
+                                    app:srcCompat="@drawable/ic_accuracy"
                                     app:tint="@color/black_50"
                                     tools:ignore="ContentDescription" />
 

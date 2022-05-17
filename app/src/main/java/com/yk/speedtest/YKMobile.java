@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
-import com.singhajit.sherlock.core.Sherlock;
-
 
 public class YKMobile extends Application {
 
@@ -27,7 +25,6 @@ public class YKMobile extends Application {
     if (this.getApplicationContext() != null) {
       setContext(this.getApplicationContext());
     }
-    Sherlock.init(this);
   }
 
 }

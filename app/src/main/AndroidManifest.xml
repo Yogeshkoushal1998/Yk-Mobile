@@ -76,6 +76,11 @@
             android:value="ca-app-pub-2549545540701829~3387948574" />
         <!--       banner id  "ca-app-pub-2549545540701829/5603473404"-->
         <!--        ca-app-pub-2549545540701829/1968863619-->
+
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="${enableCrashReporting}" />
     </application>
+
 
 </manifest>

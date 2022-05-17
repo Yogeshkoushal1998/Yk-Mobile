@@ -1,13 +1,13 @@
 package com.yk.speedtest.util;
 
+import static android.content.ContentValues.TAG;
+
 import android.util.Log;
 
 import java.util.Objects;
 
-import static android.content.ContentValues.TAG;
-
 public class AppLogger {
-  private static final boolean DEBUG = true;
+  private static final boolean DEBUG = false;
   private static final String PREFIX = "<--Yk Mobile Log--> ";
 
   private AppLogger() {
