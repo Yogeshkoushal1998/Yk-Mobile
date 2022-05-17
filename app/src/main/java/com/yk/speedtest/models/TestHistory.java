@@ -5,6 +5,7 @@ import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
 import com.yk.speedtest.db.DBConstants;
 
 
@@ -21,9 +22,12 @@ public class TestHistory {
   private int connectionType;
   private String connectionTypeHuman;
   private String serverInfo;
-  private Float latitude;
-  private Float longitude;
-  private Float accuracy;
+    @SerializedName("locationLatitude")
+    private Float latitude;
+    @SerializedName("locationLongitude")
+    private Float longitude;
+    @SerializedName("locationAccuracy")
+    private Float accuracy;
   @Embedded
   private TestServer server;
   private long length;

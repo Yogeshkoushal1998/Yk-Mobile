@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YK Mobile</string>
+    <string name="app_name">Network Speed Test</string>
 
     <string name="test_intereeupted">Test Interrupted</string>
     <string name="test_fatal_error">Test Fatal Error</string>
@@ -41,27 +41,15 @@
     <string name="title">Title*</string>
     <string name="stop_test">Stop Test</string>
     <string name="do_you_want_to_stop_test">Do you want to Stop Speed Test?</string>
-    <string name="history">History</string>
-    <string name="title_activity_speed_test_history">SpeedTestHistory</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="hello_world">Hello Square World!</string>
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 
     <string name="setTheme">Set theme</string>
@@ -70,22 +58,12 @@
     <string name="just_now"> Just now</string>
     <string name="minute_ago"> minute ago</string>
     <string name="minutes_ago"> minutes ago</string>
-    <string name="hours_ago"> hours ago</string>
-    <string name="about_hr_ago">about an hour ago</string>
 
-    <string name="max">Max</string>
     <string name="download">Download</string>
     <string name="ping_caps">PING</string>
-    <string name="jitter_caps">JITTER</string>
     <string name="packet_loss_caps">Accuracy</string>
     <string name="location">Test location</string>
-    <string name="min_mum">Min</string>
-    <string name="rakuten">Rakuten</string>
-    <string name="device">Device</string>
     <string name="server">Server</string>
-    <string name="lat">Lat</string>
-    <string name="longitute">Long</string>
-    <string name="mbps">Mbps</string>
     <string name="zero">0</string>
     <string name="test_time">Test started on</string>
     <string name="feedback">Feedback</string>
@@ -98,4 +76,7 @@
     <string name="add_your_comment">Add your comment</string>
     <string name="zero_slash_250">0/250</string>
     <string name="submit">Submit</string>
+
+    <string name="interstitial_ad_id">ca-app-pub-2549545540701829/1968863619</string>
+
 </resources>

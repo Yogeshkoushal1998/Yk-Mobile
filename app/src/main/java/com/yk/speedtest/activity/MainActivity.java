@@ -1,15 +1,14 @@
 package com.yk.speedtest.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.ads.MobileAds;
 import com.speedchecker.android.sdk.speedtest.R;
 import com.yk.speedtest.fragments.HomeFragment;
 import com.yk.speedtest.fragments.ProfileFragment;
@@ -39,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main_2);
         getSavedInstances(savedInstanceState);
         initView();
+        MobileAds.initialize(this, initializationStatus -> {
+        });
         if (!isRecreate) {
             loadHomeFragment();
         } else {
@@ -157,10 +158,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-    }
 }

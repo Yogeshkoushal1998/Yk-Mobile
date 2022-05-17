@@ -1,14 +1,6 @@
 
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-F
-app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
-A
-gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
-?
-settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-b
-2app/src/main/java/com/yk/speedtest/FCMService.java,2/2/22894cf47f226a71fa6d2f49005d5dd7f1474495
 n
 >app/src/main/java/com/yk/speedtest/fragments/HomeFragment.java,4/a/4ad2face21db5da819b914c919c4ce7c3fd6bd28
 i
@@ -37,3 +29,11 @@ e
 5app/src/main/java/com/yk/speedtest/util/TestUtil.java,b\6\b639ea20a10ee0bf5f9285a784a50eaee2d2e243
 f
 6app/src/main/java/com/yk/speedtest/util/AppLogger.java,b\d\bd9621eb7bd2a192bc06808834f85316cdeba1a6
+y
+Iapp/src/main/java/com/yk/speedtest/activity/SpeedTestHistoryActivity.java,4\1\41ad67b176f878a2b4bd6ddebd91fcfd306bd82b
+m
+=app/src/main/java/com/yk/speedtest/util/PreferenceHelper.java,f\f\ff2e9ec8b321c14cbb8a75c8372c13d5e20cc4c0
+g
+7app/src/main/java/com/yk/speedtest/util/ThemeUtils.java,e\7\e74a5f383875d66ed3759ee220e9c2346959437b
+r
+Bapp/src/main/java/com/yk/speedtest/fragments/SettingsFragment.java,6\b\6bcbb348e18e5471ca919148d17a72027c5b33ac

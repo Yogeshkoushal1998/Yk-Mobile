@@ -49,7 +49,6 @@
                 app:neumorph_shapeType="basin">
 
                 <LinearLayout
-                    android:id="@+id/llTheme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
@@ -387,7 +386,6 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvVersionValue" />
 
                     <LinearLayout
-                        android:id="@+id/llAbout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"

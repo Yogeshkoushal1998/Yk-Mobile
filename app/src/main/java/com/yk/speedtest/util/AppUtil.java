@@ -116,7 +116,7 @@ public class AppUtil {
 
     @SuppressLint("SimpleDateFormat")
     public static String getTimeAgo(Context mContext, Date postDate) {
-        String timeToReturn = new SimpleDateFormat("hh:mm aa", new Locale(AppConstants.EN)).format(postDate);
+        String timeToReturn = new SimpleDateFormat(AppConstants.SIMPLE_DATE_FORMAT_V, new Locale(AppConstants.EN)).format(postDate);
         long postTimeInMillis = postDate.getTime();
         long currentTimeInMillis = System.currentTimeMillis();
         String postTime = new SimpleDateFormat("hh:mm a", new Locale(AppConstants.EN)).format(postTimeInMillis);

@@ -11,10 +11,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.gson.Gson;
 import com.speedchecker.android.sdk.Public.SpeedTestListener;
 import com.speedchecker.android.sdk.Public.SpeedTestResult;
@@ -40,6 +46,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
     private NeumorphTextView tvStart;
     private LinearLayout rlbtnAnimate;
     private ConstraintLayout llParent;
+    private InterstitialAd mInterstitialAd;
 
 
     public static SpeedTestFragment getInstance() {
@@ -72,7 +79,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         barImageView = rootview.findViewById(R.id.barImageView);
         NeumorphTextView tvTitle = rootview.findViewById(R.id.tvTitle);
         rlbtnAnimate = rootview.findViewById(R.id.rlbtnAnimate);
-        llParent=rootview.findViewById(R.id.llParent);
+        llParent = rootview.findViewById(R.id.llParent);
         tvStart = rootview.findViewById(R.id.tvStart);
         tvTitle.setText(R.string.speed_test);
         AppUtil.changeTextColorAnimation(tvTitle);
@@ -97,6 +104,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
             }
         });
     }
+
 
     private void btnAnimation() {
         int yAnimation = llParent.getHeight() / 2 - (int) getResources().getDimension(R.dimen._25sdp);
@@ -126,6 +134,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
     public void onTestStarted() {
         mTextViewStage.setText(R.string.test_started);
         mTextViewResult.setText("");
+        setAds();
     }
 
     @Override
@@ -133,6 +142,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         mTextViewStage.setText(R.string.fetch_server_failed);
         mTextViewResult.setText("");
         resetTestView();
+        showAd();
     }
 
     @Override
@@ -143,17 +153,32 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
 
     @Override
     public void onTestFinished(SpeedTestResult speedTestResult) {
+        showAd();
         String finalStr = getString(R.string.ping) + ": " + speedTestResult.getPing() + " ms" + "\n"
                 + getString(R.string.download_speed) + ": " + speedTestResult.getDownloadSpeed() + " Mb/s" + "\n"
                 + getString(R.string.upload_speed) + ": " + speedTestResult.getUploadSpeed() + " Mb/s" + "\n"
-                + getString(R.string.accuracy) + ": " + speedTestResult.getAccuracy() + "\n"
+                + getString(R.string.accuracy) + ": " + speedTestResult.getLocationAccuracy() + "\n"
                 + getString(R.string.connection_type) + ": " + speedTestResult.getConnectionTypeHuman() + "\n"
-                + getString(R.string.address) + ": " + AppUtil.getAddress(mActivity, speedTestResult.getLatitude(), speedTestResult.getLongitude()) + "\n";
+                + getString(R.string.address) + ": " + AppUtil.getAddress(mActivity, speedTestResult.getLocationLatitude(), speedTestResult.getLocationLongitude()) + "\n";
         mTextViewStage.setText(R.string.test_finised);
         mTextViewResult.setText(finalStr);
         AppLogger.d("TAG", new Gson().toJson(speedTestResult));
         setDataInDb(speedTestResult);
         resetTestView();
+    }
+
+    private void showAd() {
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(requireActivity());
+            mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent();
+                    mInterstitialAd = null;
+                    setAds();
+                }
+            });
+        }
     }
 
     private void setDataInDb(SpeedTestResult speedTestResult) {
@@ -172,10 +197,11 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
     }
 
     @Override
-    public void onPingFinished(int i) {
+    public void onPingFinished(int i, int i1) {
         mTextViewStage.setText(R.string.ping_finished);
         mTextViewResult.setText((i + " ms"));
     }
+
 
     @Override
     public void onDownloadTestStarted() {
@@ -227,6 +253,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         mTextViewStage.setText(R.string.test_fatal_error);
         mTextViewResult.setText(s);
         resetTestView();
+        showAd();
     }
 
     @Override
@@ -234,6 +261,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         mTextViewStage.setText(R.string.test_intereeupted);
         mTextViewResult.setText(s);
         resetTestView();
+        showAd();
     }
 
     private void resetTestView() {
@@ -243,4 +271,24 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
 
     }
 
+
+    public void setAds() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(requireActivity(), getString(R.string.interstitial_ad_id), adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                // The mInterstitialAd reference will be null until
+                // an ad is loaded.
+                mInterstitialAd = interstitialAd;
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                // Handle the error
+                mInterstitialAd = null;
+            }
+        });
+
+
+    }
 }

@@ -5,6 +5,8 @@ buildscript {
     repositories {
         google()
         jcenter()
+        google()
+        mavenCentral()
         
     }
     dependencies {
@@ -21,6 +23,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url "https://www.jitpack.io" }
 
         //TODO: 1. Update the "project level" gradle file.
