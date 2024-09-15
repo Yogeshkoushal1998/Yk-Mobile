@@ -70,13 +70,17 @@
     <string name="about">About</string>
     <string name="application_version">Application Version</string>
     <string name="_1_0_0">1.0.0</string>
-    <string name="developer">Developer</string>
+    <string name="developer">Connect with Developer</string>
     <string name="dark">Dark</string>
     <string name="light">Light</string>
     <string name="add_your_comment">Add your comment</string>
     <string name="zero_slash_250">0/250</string>
     <string name="submit">Submit</string>
 
-    <string name="interstitial_ad_id">ca-app-pub-2549545540701829/1968863619</string>
+    <string name="interstitial_ad_id">ca-app-pub-2549545540701829/4478637453</string>
+<!--    testID-->
+<!--    <string name="interstitial_ad_id">ca-app-pub-3940256099942544/1033173712</string>-->
+
+
 
 </resources>

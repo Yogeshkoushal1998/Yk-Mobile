@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "670271217719",
-    "project_id": "network-speed-test-7bf98",
-    "storage_bucket": "network-speed-test-7bf98.appspot.com"
+    "project_number": "731259260490",
+    "project_id": "network-speed-test-4c4d6",
+    "storage_bucket": "network-speed-test-4c4d6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:670271217719:android:12e5d55bb5ee88aceb9fb2",
+        "mobilesdk_app_id": "1:731259260490:android:e2a581d1b33803dce960b3",
         "android_client_info": {
-          "package_name": "com.yk.mobile.networkspeedtest"
+          "package_name": "com.yk.mobile.networkstest"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "670271217719-s3cmg6n50u1k3f6h1epnsct0buf1l5t5.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA4wkopKhtICibyRG3o7HxVKoO8c2hZej8"
+          "current_key": "AIzaSyBzGTrnHSVAv-nVZXXMDjKuegzEYEzvhP0"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "670271217719-s3cmg6n50u1k3f6h1epnsct0buf1l5t5.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

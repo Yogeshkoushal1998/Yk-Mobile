@@ -1,0 +1,44 @@
+
+Executing tasks: [signingreport] in project C:\Users\DELL\AndroidStudioProjects\Yk-Mobile-SpeedTest
+
+
+> Task :app:signingReport
+Variant: debug
+Config: config
+Store: C:\Users\DELL\AndroidStudioProjects\Yk-Mobile-SpeedTest\app\release_credential\speedtest.jks
+Alias: speedtest
+MD5: 69:61:E4:C6:87:94:AA:EC:86:8C:30:63:BC:A8:EA:87
+SHA1: E2:DC:E8:3C:A4:AB:EB:1C:9B:D7:0A:95:D6:9C:B9:B7:C1:13:94:5E
+SHA-256: 8C:2A:CC:A6:F7:EE:0E:6E:69:FB:F8:C4:86:81:AB:11:BB:AF:D1:16:7D:DA:10:77:9A:A5:C2:54:65:38:4F:38
+Valid until: Sunday, September 2, 2074
+----------
+Variant: release
+Config: config
+Store: C:\Users\DELL\AndroidStudioProjects\Yk-Mobile-SpeedTest\app\release_credential\speedtest.jks
+Alias: speedtest
+MD5: 69:61:E4:C6:87:94:AA:EC:86:8C:30:63:BC:A8:EA:87
+SHA1: E2:DC:E8:3C:A4:AB:EB:1C:9B:D7:0A:95:D6:9C:B9:B7:C1:13:94:5E
+SHA-256: 8C:2A:CC:A6:F7:EE:0E:6E:69:FB:F8:C4:86:81:AB:11:BB:AF:D1:16:7D:DA:10:77:9A:A5:C2:54:65:38:4F:38
+Valid until: Sunday, September 2, 2074
+----------
+Variant: debugAndroidTest
+Config: config
+Store: C:\Users\DELL\AndroidStudioProjects\Yk-Mobile-SpeedTest\app\release_credential\speedtest.jks
+Alias: speedtest
+MD5: 69:61:E4:C6:87:94:AA:EC:86:8C:30:63:BC:A8:EA:87
+SHA1: E2:DC:E8:3C:A4:AB:EB:1C:9B:D7:0A:95:D6:9C:B9:B7:C1:13:94:5E
+SHA-256: 8C:2A:CC:A6:F7:EE:0E:6E:69:FB:F8:C4:86:81:AB:11:BB:AF:D1:16:7D:DA:10:77:9A:A5:C2:54:65:38:4F:38
+Valid until: Sunday, September 2, 2074
+----------
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 656ms
+1 actionable task: 1 executed
+
+Build Analyzer results available
+11:26:37 PM: Execution finished 'signingreport'.

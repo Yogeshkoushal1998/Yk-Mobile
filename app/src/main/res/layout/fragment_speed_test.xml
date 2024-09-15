@@ -135,6 +135,7 @@
         <soup.neumorphism.NeumorphImageView
             android:id="@+id/btnHistory"
             style="@style/neuCardStyle"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/_15sdp"

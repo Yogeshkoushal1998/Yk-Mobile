@@ -1,5 +1,6 @@
 package com.yk.speedtest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setAnimation(boolean isHome, boolean isSetting, boolean isProfile, boolean isSpeedTest) {
         AppUtil.setAnimationImage(this, R.drawable.setting, ivSetting, isSetting);
-        AppUtil.setAnimationImage(this, R.drawable.profile, ivProfile, isProfile);
+        AppUtil.setAnimationImage(this, R.drawable.ic_baseline_history_24, ivProfile, false);
         AppUtil.setAnimationImage(this, R.drawable.home, ivHome, isHome);
         AppUtil.setAnimationImage(this, R.drawable.speed_test_icn, ivSpeedTest, isSpeedTest);
     }
@@ -94,9 +95,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ivProfile:
                 if (speedTestRunningCheck()) return;
                 setAnimation(false, false, true, false);
-                loadFragment(ProfileFragment.getInstance());
+//                loadFragment(ProfileFragment.getInstance());
+
 //        Intent intent = new Intent(this, SpeedBoosterActivity.class);
 //        startActivity(intent);
+
+                Intent intent = new Intent(this, SpeedTestHistoryActivity.class);
+                startActivity(intent);
+
                 break;
         }
     }

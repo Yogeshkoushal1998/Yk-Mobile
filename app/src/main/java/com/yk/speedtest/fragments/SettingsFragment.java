@@ -54,7 +54,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     private RatingBar ratingBar;
     private final String linkedLink = "www.linkedin.com/in/yogesh-koushal-30b02b147";
     private final String facbookLink = "https://www.facebook.com/profile.php?id=100007169175371";
-    private final String instagramLink = "http://instagram.com/_u/yogesh_koushal_";
+    private final String instagramLink = "http://instagram.com/_u/yogesh__koushal";
     private final String twitterLink = "twitter://user?user_id=yogeshkumarkou2";
     private final String gmail = "yogeshkoushal1998@gmail.com";
 
@@ -196,7 +196,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                 resetOnCancelBack();
                 break;
             case R.id.nivInstagram:
-                sendAnotherApk(instagramLink, "com.instagram.android", "http://instagram.com/yogesh_koushal_");
+                sendAnotherApk(instagramLink, "com.instagram.android", "http://instagram.com/yogesh__koushal");
                 break;
             case R.id.nivFacebook:
                 sendAnotherApk(facbookLink, "com.facebook.android", facbookLink);

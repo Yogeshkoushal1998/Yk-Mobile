@@ -96,13 +96,17 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
         });
 
         rootview.findViewById(R.id.btnHistory).setOnClickListener(v -> {
-            if (!isTestRunning) {
-                Intent intent = new Intent(requireActivity(), SpeedTestHistoryActivity.class);
-                startActivity(intent);
-            } else {
-                openStopTestAlertDialog();
-            }
+            openSpeedTestHistoryActivity();
         });
+    }
+
+    private void openSpeedTestHistoryActivity() {
+        if (!isTestRunning) {
+            Intent intent = new Intent(requireActivity(), SpeedTestHistoryActivity.class);
+            startActivity(intent);
+        } else {
+            openStopTestAlertDialog();
+        }
     }
 
 
@@ -138,7 +142,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
     }
 
     @Override
-    public void onFetchServerFailed() {
+    public void onFetchServerFailed(Integer integer) {
         mTextViewStage.setText(R.string.fetch_server_failed);
         mTextViewResult.setText("");
         resetTestView();
@@ -286,6 +290,7 @@ public class SpeedTestFragment extends Fragment implements SpeedTestListener {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 // Handle the error
                 mInterstitialAd = null;
+                AppLogger.d("TAG",loadAdError.getMessage());
             }
         });
 
